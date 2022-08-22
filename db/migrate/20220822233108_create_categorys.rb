@@ -1,7 +1,7 @@
 class CreateCategorys < ActiveRecord::Migration[6.1]
   def change
-    create_table :categorys do |t|
-      t.string :type
+    create_table :categories do |t|
+      t.string :category_name
       t.string :image_url
     end
   end
