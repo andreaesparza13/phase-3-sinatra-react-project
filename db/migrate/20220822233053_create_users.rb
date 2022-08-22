@@ -9,5 +9,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :city
       t.string :state
+    end
   end
 end
