@@ -10,41 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_23_011059) do
+ActiveRecord::Schema.define(version: 2022_08_23_164708) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "location"
+  end
 
   create_table "arts", force: :cascade do |t|
     t.string "title"
+    t.string "medium"
     t.string "description"
-    t.string "price"
-    t.string "image_url"
-    t.integer "user_id"
-    t.integer "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "category_name"
+    t.integer "artist_id"
+    t.integer "exhibit_id"
     t.string "image_url"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "comment"
-    t.integer "user_id"
-    t.integer "art_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
+  create_table "exhibits", force: :cascade do |t|
+    t.string "location"
+    t.string "theme"
+    t.string "name"
   end
 
 end
