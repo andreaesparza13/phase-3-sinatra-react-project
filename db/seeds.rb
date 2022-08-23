@@ -12,4 +12,8 @@ a1 = Art.create title: 'Spice', description: 'Spice is a spice', price: '$1.00',
 a2 = Art.create title: 'Nature', description: 'Nature is a nature', price: '$2.00', image_url: '', user_id: u2.id, category_id: c2.id
 a3 = Art.create title: 'Longitude', description: 'Longitude is a longitude', price: '$3.00', image_url: '', user_id: u3.id, category_id: c3.id
 
+comment1 = Comment.create comment: 'Neat', user_id: u1.id, art_id: a1.id
+comment2 = Comment.create comment: 'How abstract', user_id: u2.id, art_id: a2.id
+comment3 = Comment.create comment: 'Cool beans', user_id: u3.id, art_id: a3.id
+
 puts "✅ Done seeding!"
