@@ -10,6 +10,12 @@ class ExhibitController < ApplicationController
       exhibit.to_json
    end
 
+   get '/exhibits/:id/arts' do
+      exhibit = Exhibit.find(params[:id])
+      arts = exhibit.grab_exhibit
+      arts.to_json
+   end
+
    post '/exhibits' do
       exhibit = Exhibit.create(
       theme: params[:theme],
