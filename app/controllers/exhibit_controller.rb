@@ -12,11 +12,7 @@ class ExhibitController < ApplicationController
 
    get '/exhibits/:id/arts' do
       exhibit = Exhibit.find(params[:id])
-<<<<<<< HEAD
-      arts = exhibit.grab_exhibit
-=======
       arts = exhibit.arts
->>>>>>> 82417c2 (activerecord)
       arts.to_json
    end
 

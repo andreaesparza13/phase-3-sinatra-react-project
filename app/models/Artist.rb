@@ -5,4 +5,9 @@ class Artist < ActiveRecord::Base
     def full_name
         "#{self.first_name} #{self.last_name}" 
     end
+
+    def return_art
+        self.arts.each{|art| art}
+    end
+
 end
