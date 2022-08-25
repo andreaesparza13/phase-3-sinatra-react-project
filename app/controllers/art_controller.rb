@@ -2,11 +2,13 @@ class ArtController < ApplicationController
 
    get '/art' do
       arts = Art.all
+      art[:artistName] = art.artist.full_name
       arts.to_json
    end
 
    get '/art/:id' do
       art = Art.find(params[:id])
+      art[:artistName] = art.artist.full_name
       art.to_json
    end
 
