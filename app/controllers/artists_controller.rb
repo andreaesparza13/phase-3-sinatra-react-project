@@ -10,6 +10,11 @@ class ArtistsController < ApplicationController
       artist.to_json
    end
 
+   get '/artists/:id/arts' do
+      artist = Artist.find(params[:id])
+      artist.arts.to_json
+   end
+
    post '/artists' do
       artist = Artist.create(
       first_name: params[:first_name],
