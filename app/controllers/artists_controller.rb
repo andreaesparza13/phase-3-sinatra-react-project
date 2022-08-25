@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
 
    get '/artists/:id/arts' do
       artist = Artist.find(params[:id])
-      artist.return_art.to_json
+      artist.arts.to_json
    end
 
    post '/artists' do
