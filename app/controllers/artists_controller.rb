@@ -16,12 +16,7 @@ class ArtistsController < ApplicationController
    end
 
    post '/artists' do
-      artist = Artist.create(
-      first_name: params[:first_name],
-      last_name: params[:last_name],
-      location: params[:location],
-      age: params[:age]
-      )
+      artist = Artist.create(JSON.parse(request.body.read))
       artist.to_json
    end
 
