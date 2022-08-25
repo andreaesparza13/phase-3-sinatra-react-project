@@ -3,6 +3,7 @@ class Art < ActiveRecord::Base
     belongs_to :exhibit
 
     def self.alphabetize
-        Art.order(:title)
+        self.all.sort{ |a| a.title.downcase }
     end
+
 end
