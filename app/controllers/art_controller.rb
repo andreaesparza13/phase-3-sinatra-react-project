@@ -11,14 +11,7 @@ class ArtController < ApplicationController
    end
 
    post '/art' do
-      art = Art.create(
-      title: params[:title],
-      medium: params[:medium],
-      description: params[:description],
-      image_url: params[:image_url],
-      artist_id: params[:artist_id],
-      exhibit_id: params[:exhibit_id]
-      )
+      art = Art.create(JSON.parse(request.body.read))
       art.to_json
    end
 
