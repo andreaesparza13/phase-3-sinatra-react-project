@@ -40,5 +40,9 @@ class ExhibitController < ApplicationController
       exhibit.destroy
       exhibit.to_json
    end
+
+   delete '/exhibits/:id' do
+      Exhibit.delete_first_exhibit.to_json
+   end
    
 end
