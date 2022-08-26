@@ -34,7 +34,7 @@ end
     image_url = Faker::LoremFlickr.image search_terms: [image]
     medium = Faker::Lorem.word
     artist_id = Faker::Number.between(from: 4, to: Artist.count)
-    exhibit_id = Faker::Number.between(from: 4, to: Exhibit.count)
+    exhibit_id = Faker::Number.between(from: 1, to: Exhibit.count)
     Art.create title: title, description: description, image_url: image_url, medium: medium, artist_id: artist_id, exhibit_id: exhibit_id
 end
 
