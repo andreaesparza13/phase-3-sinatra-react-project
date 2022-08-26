@@ -11,8 +11,18 @@ class ArtController < ApplicationController
    end
 
    post '/art' do
-      art = Art.create(JSON.parse(request.body.read))
-      art.to_json
+      body = JSON.parse(request.body.read)
+      first_name = body["artist_full_name"].split(" ")[0] 
+      last_name = body["artist_full_name"].split(" ")[1]
+      exhibit = body["exhibit"]
+      Art.create(
+         title: body["title"],
+         medium: body["medium"],
+         description: body["description"],
+         image_url: body["image_url"],
+         artist_id: Artist.find_or_create_by(first_name: first_name, last_name: last_name).id,
+         exhibit_id: Exhibit.find_or_create_by(name: exhibit).id
+      ).to_json
    end
 
    patch '/art/:id' do
