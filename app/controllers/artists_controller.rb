@@ -26,7 +26,8 @@ class ArtistsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       location: params[:location],
-      age: params[:age]
+      age: params[:age],
+      image_url: params[:image_url]
       )
       artist.to_json
    end

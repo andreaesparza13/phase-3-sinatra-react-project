@@ -5,6 +5,7 @@ class Artists < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.integer :age
       t.string :location
+      t.string :image_url
     end
   end
 end
